@@ -12,10 +12,20 @@ public class Target : MonoBehaviour
     float xRange = 4;
     float ySpawn = -3;
 
+    [Header("Score Value")]
+    [SerializeField] int pointValue;
+    GameManager gameManager;
+
+
+    [Header("Particle")]
+    [SerializeField] ParticleSystem explosionParticle;
+
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         Move();
     }
@@ -47,10 +57,13 @@ public class Target : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(gameObject);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+        gameManager.UpdateScore(pointValue);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+
     }
 }

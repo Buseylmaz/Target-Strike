@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +9,14 @@ public class GameManager : MonoBehaviour
 
     float spawnRate = 1.0f;
 
+    [SerializeField] TextMeshProUGUI scoreText;
+    int score;
+
 
     private void Start()
     {
+        score = 0;
+
         StartCoroutine(SpawnTarget());
     }
 
@@ -25,4 +31,12 @@ public class GameManager : MonoBehaviour
             Instantiate(targets[index]);
         }
     }
+
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+    }
+
 }
