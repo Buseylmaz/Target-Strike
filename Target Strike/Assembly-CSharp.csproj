@@ -60,6 +60,7 @@
     <Compile Include="Assets\Asset\_Source_Files\Scripts\DestroyAfterDelay.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\DifficultyButton.cs" />
+    <Compile Include="Assets\Scripts\Sounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -68,7 +69,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Asset\_Source_Files\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\Asset\Fonts\Roboto_Condensed\LICENSE.txt" />
-    <None Include="Assets\Asset\_Source_Files\_LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Asset\Fonts\Baloo_Chettan\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />

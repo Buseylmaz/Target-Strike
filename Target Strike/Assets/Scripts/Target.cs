@@ -71,6 +71,8 @@ public class Target : MonoBehaviour
 
         if (gameObject.CompareTag("Good"))
         {
+            gameManager.live--;
+            gameManager.liveText.text = "Lives: " + gameManager.live;
             gameManager.GameOver();
         }
         
