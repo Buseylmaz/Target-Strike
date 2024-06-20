@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> targets;
-
-    float spawnRate = 1.0f;
+    float spawnTime = 1.0f;
 
 
     [Header("Game Over")]
@@ -21,20 +20,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     int score;
 
+    [Header("Start Scene")]
+    public GameObject titleScreen;
 
 
-    private void Start()
-    {
-        isGameActive = true;
-        score = 0;
-        StartCoroutine(SpawnTarget());
-    }
+    float spawnRate = 1.0f;
+
 
     IEnumerator SpawnTarget()
     {
         while (isGameActive)
         {
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(spawnTime);
 
             int index = Random.Range(0, targets.Count);
 
@@ -59,6 +56,22 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    public void StartGame(int difficulty)
+    {
+        isGameActive = true;
+        score = 0;
+
+        spawnRate /= difficulty;
+
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+
+        
+
+        titleScreen.gameObject.SetActive(false);
     }
 
 }
