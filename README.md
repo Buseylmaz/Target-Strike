@@ -12,5 +12,8 @@ Target Strike is the fifth project I developed as part of the "Unity Learn Junio
 * To make the game more lively, music was added. However, considering that some players might be disturbed by the music, a slider was added to adjust the music settings.
 * Pressing the "A" key allows the player to toggle the pause feature on and off.
 
+## **Game Video**
+https://learn.unity.com/submission/667432b2edbc2a2b53f5713a
+
 ## **Unity Version**
 2021.3.30f1 LTS
